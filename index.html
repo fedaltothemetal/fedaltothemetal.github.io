@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="CaT: Coaching a Teachable Student">
-  <meta name="keywords" content="Coaching a Teachable Student, CaT">
+  <meta name="description" content="Feedback-Guided Autonomous Driving">
+  <meta name="keywords" content="Feedback-Guided Autonomous Driving">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CaT: Coaching a Teachable Student</title>
+  <title>Feedback-Guided Autonomous Driving</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -24,14 +24,14 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
-  <meta property="og:site_name" content="CaT: Coaching a Teachable Student" />
+  <meta property="og:site_name" content="Feedback-Guided Autonomous Driving" />
   <meta property="og:type" content="video.other" />
-  <meta property="og:title" content="CaT: Coaching a Teachable Student" />
-  <meta property="og:description" content="Zhang, et al. CaT: Coaching a Teachable Student." />
+  <meta property="og:title" content="Feedback-Guided Autonomous Driving" />
+  <meta property="og:description" content="Zhang, et al. Feedback-Guided Autonomous Driving." />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CaT: Coaching a Teachable Student" />
-  <meta name="twitter:description" content="Zhang, et al. CaT: Coaching a Teachable Student." />
+  <meta name="twitter:title" content="Feedback-Guided Autonomous Driving" />
+  <meta name="twitter:description" content="Zhang, et al. Feedback-Guided Autonomous Driving." />
 
   <script src="https://www.youtube.com/iframe_api"></script>
 </head>
@@ -43,35 +43,37 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">CaT: Coaching a Teachable Student</h1>
+            <h1 class="title is-1 publication-title">Feedback-Guided Autonomous Driving</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://jimuyangz.github.io/">Jimuyang Zhang</a>&emsp;
                 <a href="https://tzmhuang.github.io/">Zanming Huang</a>&emsp;
+                <a href="https://arijitray1993.github.io/">Arijit Ray</a>&emsp;
                 <a href="https://eshed1.github.io/">Eshed Ohn-Bar</a>&emsp;
                 <br />Boston University
-                <span class="brmod"></span>CVPR 2023 (Highlight)</span>
+                <span class="brmod"></span>CVPR 2024 (Highlight)</span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="./resources/CaT.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <a href="./resources/FeD_v1" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
                 </span>
-                <span class="link-block">
+                <!-- arXiv Link. -->
+                <!-- <span class="link-block">
                   <a href="http://arxiv.org/abs/2306.10014" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span>
+                </span> -->
                 <!-- Video Link. -->
                 <span class="link-block">
                   <a href="#method_video" class="external-link button is-normal is-rounded is-dark">
@@ -83,12 +85,14 @@
                 </span>
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/h2xlab/CaT" class="external-link button is-normal is-rounded is-dark">
+                  <!-- <a href="https://github.com/h2xlab/CaT" class="external-link button is-normal is-rounded is-dark"> -->
+                  <span class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
-                  </a>
+                    <span>Code (Coming Soon)</span>
+                  </span>
+                  <!-- </a> -->
                 </span>
                 <!-- Slides Link. -->
                 <!-- <span class="link-block">
@@ -132,31 +136,22 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose a novel knowledge distillation framework for
-              effectively teaching a sensorimotor student agent to drive
-              from the supervision of a privileged teacher agent. Current
-              distillation for sensorimotor agents methods tend to result
-              in suboptimal learned driving behavior by the student,
-              which we hypothesize is due to inherent differences between
-              the input, modeling capacity, and optimization processes of
-              the two agents. We develop a novel distillation scheme that
-              can address these limitations and close the gap between the
-              sensorimotor agent and its privileged teacher. Our key insight
-              is to design a student which learns to align their input
-              features with the teacher’s privileged Bird’s Eye View (BEV)
-              space. The student then can benefit from direct supervision
-              by the teacher over the internal representation learning. To
-              scaffold the difficult sensorimotor learning task, the student
-              model is optimized via a student-paced coaching mechanism with 
-              various auxiliary supervision. We further propose
-              a high-capacity imitation learned privileged agent that surpasses
-              prior privileged agents in CARLA and ensures the
-              student learns safe driving behavior. Our proposed sensorimotor
-              agent results in a robust image-based behavior
-              cloning agent in CARLA, improving over current models
-              by over 20.6% in driving score without requiring LiDAR,
-              historical observations, ensemble of models, on-policy data
-              aggregation or reinforcement learning.
+              While behavior cloning has recently emerged as a highly successful paradigm 
+              for autonomous driving, humans rarely learn to perform complex tasks, such as 
+              driving, via imitation or behavior cloning alone. In contrast, learning in humans 
+              often involves additional detailed guidance throughout the interactive learning 
+              process, i.e., where feedback, often via language, provides detailed information 
+              as to which part of their trial was performed incorrectly or suboptimally and why. 
+              Motivated by this observation, we introduce an efficient feedback-based framework 
+              for improving behavior-cloning-based training of sensorimotor driving agents. Our 
+              key insight is to leverage recent advances in Large Language Models (LLMs) to 
+              provide corrective fine-grained feedback regarding the underlying reason behind 
+              driving prediction failures. Moreover, our introduced network architecture is 
+              efficient, enabling the first sensorimotor end-to-end training and evaluation of 
+              LLM-based driving models. The resulting agent achieves state-of-the-art performance 
+              in open-loop evaluation on nuScenes, outperforming prior state-of-the-art by over 8.1% 
+              and 57.1% in accuracy and collision rate, respectively. In CARLA, our camera-based 
+              agent improves by 16.6% in driving score over prior LIDAR-based approaches.
             </p>
           </div>
         </div>
@@ -170,7 +165,7 @@
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
           <!-- <video controls>
-            <source src="./resources/CaT_Video.mp4" type="video/mp4">
+            <source src="./resources/FeD_Video.mp4" type="video/mp4">
           </video> -->
           <iframe src="https://www.youtube.com/embed/5tmkDHfgqvU"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -189,20 +184,19 @@
           <h2 class="title is-3">Motivation</h2>
           <div class="content has-text-justified">
             <p>
-              To ease the challenging sensorimotor agent training task, recent approaches decompose the task into
-              stages, by first training a privileged network with complete knowledge of the world and distilling its
-              knowledge into a less capable student network. However, current distillation methods for sensorimotor
-              agents result in <b>suboptimal driving behavior</b> due to <b>inherent differences between the inputs,
-                modeling
-                capacity</b>, and <b>optimization processes of the two agents.</b> </p>
+              Currently, the most common paradigm for training autonomous driving systems relies primarily on 
+              learning from expert demonstrations, e.g., via behavior cloning. While this has fueled impressive 
+              improvements, these systems still fail to generalize to a wide range of novel scenarios. 
+              We believe a possible reason could be the lack of feedback explaining why a certain action policy fails. 
+              Rich feedback from a teacher can be beneficial to learning the cause of a control failure in an out-of-domain scenario. 
             </p>
-            <div class="column">
+            <!-- <div class="column">
               <img src="./resources/lbc_diagram.png" />
             </div>
 
             <div class="content has-text-centered">
               <i>Chen, et al. CoRL 2020</i>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -217,24 +211,24 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Method</h2>
           <div class="content has-text-justified">
-            We develop a novel deep distillation scheme that can address these
-            limitations and close the gap between the sensorimotor agent and its
-            privileged teacher. We achieve this by
-
+            we propose FeD, a feedback-guided end-to-end sensorimotor driving 
+            agent that employs a multimodal large language model (MLLM) to 
+            leverage their rich language interface for user-control and refinement.
+            Our three key improvements are:
             <ol>
-              <li><b>Effective Teacher</b>: We propose to incorporate explicit safety-aware cues
-                into the BEV space that facilitate a surprisingly effective teacher agent
-                design. We demonstrate our learned agent to match expert- level decisionmaking.</li>
+              <li><b>Language-based feedback refining</b> trained using autogenerated feedback data. 
+                Hence, our approach requires no additional data collection</li>
 
-              <li><b>Teachable Student via Alignment</b>: An IPM-based transformer alignment
-                module can facilitate direct distillation of most of the teacher’s features and
-                better guide the student learning process.</li>
+              <li><b>Training the model via distillation</b> from a privileged agent with Bird’s Eye View (BEV) 
+                of the scene, allowing our model to robustly use just RGB data at test time. </li>
 
-              <li><b>Student-paced Coaching</b>: A coaching mechanism for managing difficult
-                samples can scaffold knowledge and lead to improved model optimization
-                by better considering the ability of the student.</li>
+              <li><b>Predicting driving waypoints in a maskedtoken fashion</b> from the waypoint tokens’ internal 
+                representations, i.e., not relying on the slow sequentially generative process.</li>
             </ol>
           </div>
+          <div class="column">
+            <img src="./resources/figure1.png" width="80%" />
+          </div>
         </div>
       </div>
 
@@ -242,81 +236,83 @@
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-4" align="left">Effective Teacher</h2>
+          <h2 class="title is-4" align="left">An End-to-End LLM-based Driver</h2>
           <div class="content has-text-justified">
-            Given the low performance of prior privileged agents, the teacher could benefit from more <b>explicit
-            safety-driven cues in the BEV</b>. We propose to add two types of channels of predicted agents’ future and
-            entity attention. We first utilize a kinematics bicycle model to predict future trajectories of dynamic
-            objects, which enables us to iteratively predict and represent short-term future position, orientation, and
-            speed of agent. Then, we encode an explicit attention channel for highlighting potential future infractions.
-            Our boosted teacher agent even improves over the rule-based expert.
+            We closely follow a MLLM architecture LLaVA, with an additional waypoints prediction head consisting of 
+            multi-layer perceptron, which enables FeD to be initialized from pre-trained LLaVA-7B weights, benefiting 
+            from the large diverse image-text corpus used to train MLLMs. However, we find off-the-shelf LLaVA to perform
+            poorly in intricate spatial reasoning tasks, addressed below.
+            <ol>
+              <li><b>Token Prediction Mechanism:</b> We note that our proposed architecture does not leverage generative 
+                sequence prediction as in most related approaches, but instead draws inspiration from more efficient methodologies
+                based on masked token prediction</li>
 
+              <li><b>Vision Encoder:</b> The front camera image <b>I</b> is processed by a CLIP ViT vision encoder, whose output 
+                image features <b>Z</b> are converted into language embeddings <b>U</b> by a trainable projection matrix <b>A</b></li>
+
+              <li><b>Language Encoder:</b> Given the language prompt, we first compute language embeddings <b>Q</b> which is
+                concatenated with visual embeddings <b>U</b></li>
+
+              <li><b>Waypoint Prediction Head:</b> we propose to directly compute the waypoints from the output embeddings of 
+                those tokens. This bypasses the need for recursive token-by-token generation and expensive sampling strategies 
+                like beam search, leading to a more efficient inference process</li>
+
+              <li><b>Prompt Design for Sensorimotor Agent:</b> we wrap ego-vehicle speed v and short-term goal g with flag tokens 
+                indicating the beginning and the end of the text span. We further provide the categorical command as natural language</li>
+
+              <li><b>Prompt Design for Privileged Agent:</b> For the privileged agent, we additionally provide parameterized environmental 
+                information</li>
+            </ol>
+            <div class="column">
+              <img src="./resources/input_prompts.png" width="80%" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-4" align="left">Feedback-Guided Fine-tuning</h2>
+          <div class="content has-text-justified">
+            We propose to incorporate feedback fine-tuning by leveraging fine-grained textual feedback regarding waypoint prediction errors. 
+            This enables the sensorimotor agent to effectively learn from experience, including failure which can provide a highly 
+            informative supervision signal. In FeD, we guide the waypoint predictions with structured critique and reasoning as language 
+            prompts. Given the ground-truth surrounding object states and the original waypoint predictions, we define a rich taxonomy over 
+            five failure cases and generate a corresponding feedback prompt for each failure case.
+
+            To ensure our agent’s ability to both generate informative failure feedback and rectify mispredicted waypoints, we supervise the model 
+            learning by applying a Cross-Entropy (CE) loss of the LLaMA outputs over the generated language feedback. We additionally compute
+            a L1 loss over the corrected waypoints similar. The optimization objective for our proposed feedback finetuning procedure is hence a 
+            weighted sum over waypoint predictions and language CE loss.
           </div>
           <div class="column">
-            <img src="./resources/bev_figure.png" width="80%" />
-          </div>
-        </div>
-      </div>
-
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-4" align="left">Teachable student via Alignment</h2>
-          <div class="content has-text-justified">
-            Due to the difference between inputs and modeling capacities, it can be difficult to align the image-based
-            student features and output with the BEV-based privileged teacher. Therefore, we proposed an <b>IPM-based
-              transformer alignment module</b> that can facilitate direct distillation of most of the teacher’s features
-            and better
-            guide the student learning process.
-          </div>
-          <div class="column">
-            <img src="./resources/figure1_crop.png" width="80%" />
+            <img src="./resources/input_prompts_feedback.png" width="80%" />
           </div>
         </div>
       </div>
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-4" align="left">Student-paced Coaching</h2>
-          <div class="content has-text-justified">
-            To better consider the learning ability of the student, we gradually coach the student with a student-paced
-            coaching mechanism. Specifically, we interpolate between teacher features and student features on samples
-            that the student performed poorly (i.e. higher loss). This effectively adjusts the learning rate in a
-            sample-selective manner, which aims to stabilize training by reducing the difficulty when the student is
-            unable to perform the optimal action.
-          </div>
-
-          <div class="column">
-            <img src="./resources/student_pace.png" width="50%" />
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-4" align="left">Model Architecture of CaT</h2>
+          <h2 class="title is-4" align="left">Model Architecture of FeD</h2>
           <div class="content has-text-justified">
             <p>
-              Our proposed CaT framework
-              enables highly effective knowledge transfer between a privileged
-              teacher and a sensorimotor (i.e., image-based) student.
+              Our proposed FeD is the first sensorimotor end-to-end LLMbased autonomous driving model. FeD enables efficient 
+              closed-loop evaluation compared with the existing LLMbased methods, which often leverage slow and costly inference.
 
-              Specifically, we first sample queries using a spatial parameterization of the BEV space and process them
-              with a self-attention module. Then, a deformable cross-attention module is applied to populate the
-              student’s BEV features.
-
-              The residual blocks following the alignment module can consequently facilitate knowledge transfer via
-              direct distillation of most of the teacher’s features.
-
-
-              Our optimization objective for guiding the distillation process is a weighted sum over both distillation
-              and auxiliary tasks, including output distillation loss, feature distillation loss, segmentation loss and
-              command prediction loss.
+              Our goal is to train a sensorimotor agent to map front camera images (orange) and ego vehicle state information (blue) 
+              encoded as language tokens, and predict a set of future waypoints. This is accomplished by introducing new waypoint tokens (green) 
+              as part of the input prompt. Our introduced tokens also enable us to leverage the rich output embeddings from the LLM for the prompt 
+              to perform direction waypoint prediction, i.e., as opposed to slow and inefficient sequentialgeneration. 
+              
+              Our training is done in two stages. First, to ease the challenging sensorimotor learning task, we introduce a privileged agent that 
+              additionally takes ground truth environmental information (purple) and provides rich supervision for training the sensorimotor agent
+              through feature distillation. Subsequently, the sensorimotor agent is fine-tuned with prompt-based feedback to enable efficient failure
+              reasoning, i.e., effective reflection on its own mistakes.
+              
             </p>
             <div class="column">
-              <img src="./resources/method.png" />
+              <img src="./resources/network_architexture.png" />
             </div>
 
           </div>
@@ -331,16 +327,19 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Result</h2>
+          <h2 class="title is-3">Results</h2>
           <div class="content has-text-justified">
-            We present our closed-loop evaluation results on the Longest-6 Benchmark in CARLA. As illustrated in the
-            table below, CaT is able to achieve state of the art performance among all prior agents, including lidar
-            based
-            approaches. Moreover, we note that our privileged BEV agent learned by imitation with history and desired
-            path, agent forecast, and entity attention even outperforms the rule-based expert.
+            In our experiments, we demonstrate state-of-theart performance in open-loop and closed-loop evaluation settings as showed in the tables below, improving over prior methods 
+            by over 16% in performance, particularly benefiting from the additional autogenerated language-based feedback. Notably, FeD achieves a 
+            significant drop in infractions by over 33% with almost zero collisions with objects in CARLA.
           </div>
           <div class="column">
-            <img src="./resources/results.png" width="80%" />
+            <p class="has-text-centered"><b>Quantitative Evaluation in CARLA</b></p>
+            <img src="./resources/results_CARLA.png" width="80%" />
+          </div>
+          <div class="column">
+            <p class="has-text-centered"><b>Open-Loop Evaluation on nuScenes</b></p>
+            <img src="./resources/results_nuScenes.png" width="80%" />
           </div>
         </div>
       </div>
@@ -354,7 +353,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Qualitative Examples</h2>
             <video controls>
-            <source src="./resources/CaT_Video.mp4" type="video/mp4">
+            <source src="./resources/FeD_Video.mp4" type="video/mp4">
           </video>
         </div>
       </div>
